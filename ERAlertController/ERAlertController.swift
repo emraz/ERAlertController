@@ -18,17 +18,14 @@ class ERAlertController: NSObject {
     var delegate: ERAlertControllerDelegate!
     static let sharedInstance = ERAlertController()
     
-    class func showAlert(_ title : String, message: String, isCancel: Bool) {
+    class func showAlert(_ title : String, message: String, isCancel: Bool, okButtonTitle: String, cancelButtonTitle: String) {
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let okButton = UIAlertAction(title: OK, style: .default) { action -> Void in
+        let okButton = UIAlertAction(title: okButtonTitle, style: .default) { action -> Void in
             //Do some other stuff
             if isCancel {
-                
-                if self.sharedInstance.delegate?.alertOKButtonAction != nil {
-                    self.sharedInstance.delegate.alertOKButtonAction()
-                }
+                self.sharedInstance.delegate.alertOKButtonAction()
                 
             }
         }
@@ -36,24 +33,18 @@ class ERAlertController: NSObject {
         
         if isCancel {
             
-            let cancelButton = UIAlertAction(title: CANCEL, style: .cancel){ action -> Void in
+            let cancelButton = UIAlertAction(title: cancelButtonTitle, style: .cancel){ action -> Void in
                 //Do some other stuff
-                
-                if self.sharedInstance.delegate?.alertCancelButtonAction() != nil {
-                    self.sharedInstance.delegate.alertCancelButtonAction()
-                }
+                self.sharedInstance.delegate.alertCancelButtonAction()
             }
             alertController.addAction(cancelButton)
         }
         
-        var rootViewController = UIApplication.shared.keyWindow?.rootViewController
-        if let navigationController = rootViewController as? UINavigationController {
-            rootViewController = navigationController.viewControllers.first
-        }
-        if let tabBarController = rootViewController as? UITabBarController {
-            rootViewController = tabBarController.selectedViewController
-        }
-        rootViewController?.present(alertController, animated: true, completion: nil)
-    }    
+        let alertWindow = UIWindow(frame: UIScreen.main.bounds)
+        alertWindow.rootViewController = UIViewController()
+        alertWindow.windowLevel = UIWindowLevelAlert + 1;
+        alertWindow.makeKeyAndVisible()
+        alertWindow.rootViewController?.present(alertController, animated: true, completion: nil)
+    }
     
 }

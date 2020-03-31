@@ -15,6 +15,7 @@
 		9F9BC1BC2433179C003457DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F9BC1BA2433179C003457DE /* LaunchScreen.storyboard */; };
 		9F9BC1C72433179C003457DE /* DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9BC1C62433179C003457DE /* DemoTests.swift */; };
 		9F9BC1D22433179C003457DE /* DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9BC1D12433179C003457DE /* DemoUITests.swift */; };
+		9F9BC1E1243317C5003457DE /* ERAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9BC1E0243317C5003457DE /* ERAlertController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		9F9BC1CD2433179C003457DE /* DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F9BC1D12433179C003457DE /* DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoUITests.swift; sourceTree = "<group>"; };
 		9F9BC1D32433179C003457DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F9BC1E0243317C5003457DE /* ERAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ERAlertController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		9F9BC1A32433179B003457DE = {
 			isa = PBXGroup;
 			children = (
+				9F9BC1DF243317C5003457DE /* ERAlertController */,
 				9F9BC1AE2433179B003457DE /* Demo */,
 				9F9BC1C52433179C003457DE /* DemoTests */,
 				9F9BC1D02433179C003457DE /* DemoUITests */,
@@ -126,6 +129,15 @@
 				9F9BC1D32433179C003457DE /* Info.plist */,
 			);
 			path = DemoUITests;
+			sourceTree = "<group>";
+		};
+		9F9BC1DF243317C5003457DE /* ERAlertController */ = {
+			isa = PBXGroup;
+			children = (
+				9F9BC1E0243317C5003457DE /* ERAlertController.swift */,
+			);
+			name = ERAlertController;
+			path = ../ERAlertController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F9BC1B42433179B003457DE /* ViewController.swift in Sources */,
+				9F9BC1E1243317C5003457DE /* ERAlertController.swift in Sources */,
 				9F9BC1B02433179B003457DE /* AppDelegate.swift in Sources */,
 				9F9BC1B22433179B003457DE /* SceneDelegate.swift in Sources */,
 			);

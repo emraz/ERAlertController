@@ -17,10 +17,8 @@ class ERAlertController: NSObject {
         let alertController = AlertController(title: title, message: message, preferredStyle: .alert)
         
         let okButton = UIAlertAction(title: okButtonTitle, style: .default) { action -> Void in
-            if isCancel {
-                if completion != nil {
-                    completion!(true)
-                }
+            if completion != nil {
+                completion!(true)
             }
         }
         alertController.addAction(okButton)

@@ -9,9 +9,6 @@
 import UIKit
 
 class ERAlertController: NSObject {
-    func numberCheck(number: String , completion : ((Bool)->())?){
-        
-    }
     
     class func showAlert(_ title : String, message: String, isCancel: Bool, okButtonTitle: String, cancelButtonTitle: String, completion: ((Bool)->())?) {
         let alertController = AlertController(title: title, message: message, preferredStyle: .alert)
@@ -32,6 +29,34 @@ class ERAlertController: NSObject {
             }
             alertController.addAction(cancelButton)
         }
+        
+        alertController.present(animated: true, completion: nil)
+    }
+    
+    class func showAlertWithTextInput(title:String? = nil,
+                                      subtitle:String? = nil,
+                                      actionTitle:String? = "Add",
+                                      cancelTitle:String? = "Cancel",
+                                      inputPlaceholder:String? = nil,
+                                      inputKeyboardType:UIKeyboardType = UIKeyboardType.default,
+                                      cancelHandler: ((UIAlertAction) -> Swift.Void)? = nil,
+                                      actionHandler: ((_ text: String?) -> Void)? = nil) {
+        
+        let alertController = AlertController(title: title, message: subtitle, preferredStyle: .alert)
+        
+        alertController.addTextField { (textField:UITextField) in
+            textField.placeholder = inputPlaceholder
+            textField.keyboardType = inputKeyboardType
+        }
+        alertController.addAction(UIAlertAction(title: actionTitle, style: .default, handler: { (action:UIAlertAction) in
+            guard let textField =  alertController.textFields?.first else {
+                actionHandler?(nil)
+                return
+            }
+            actionHandler?(textField.text)
+        }))
+        
+        alertController.addAction(UIAlertAction(title: cancelTitle, style: .cancel, handler: cancelHandler))
         
         alertController.present(animated: true, completion: nil)
     }

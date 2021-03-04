@@ -44,5 +44,15 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func showAlertWithInputField(_ sender: Any) {
+        
+        ERAlertController.showAlertWithTextInput(title: "Input Field", subtitle: "Please input your desire text", actionTitle: "Confirm", cancelTitle: "Discard", inputPlaceholder: "Please type...", inputKeyboardType: UIKeyboardType.default) { (alertAction) in
+        } actionHandler: { (inputText) in
+            if inputText!.count > 0 {
+                ERAlertController.showAlert("Message!", message: inputText!, isCancel: false, okButtonTitle: "OK", cancelButtonTitle: "", completion: nil)
+            }
+        }
+    }
 }
 

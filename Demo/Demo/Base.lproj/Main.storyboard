@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,38 +17,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJl-MG-qZn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJl-MG-qZn">
                                 <rect key="frame" x="172.5" y="433" width="69" height="30"/>
                                 <state key="normal" title="Only Alert"/>
                                 <connections>
                                     <action selector="showOnlyAlert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FLL-T2-J0k"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tg6-MV-QPJ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tg6-MV-QPJ">
                                 <rect key="frame" x="91.5" y="509" width="231" height="30"/>
                                 <state key="normal" title="Alert with Mutliple Custom Button"/>
                                 <connections>
                                     <action selector="showAlertWithCustomButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2qk-Wm-Keu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sl-6p-fCA">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sl-6p-fCA">
                                 <rect key="frame" x="125.5" y="471" width="163" height="30"/>
                                 <state key="normal" title="Alert with Button Action"/>
                                 <connections>
                                     <action selector="showAlertWithAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3c1-Lr-r6D"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OA4-xL-sb3">
+                                <rect key="frame" x="136" y="547" width="142" height="30"/>
+                                <state key="normal" title="Alert with Input Field"/>
+                                <connections>
+                                    <action selector="showAlertWithInputField:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gPc-yc-CWR"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6sl-6p-fCA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="365-qp-lzU"/>
                             <constraint firstItem="Tg6-MV-QPJ" firstAttribute="top" secondItem="6sl-6p-fCA" secondAttribute="bottom" constant="8" id="EjW-lo-04S"/>
                             <constraint firstItem="Tg6-MV-QPJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Inc-A9-73o"/>
+                            <constraint firstItem="OA4-xL-sb3" firstAttribute="top" secondItem="Tg6-MV-QPJ" secondAttribute="bottom" constant="8" symbolic="YES" id="JdK-Zq-yrH"/>
                             <constraint firstItem="JJl-MG-qZn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ZF2-Cd-Wcg"/>
+                            <constraint firstItem="OA4-xL-sb3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cUb-pL-q06"/>
                             <constraint firstItem="JJl-MG-qZn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="djn-6u-8Bt"/>
                             <constraint firstItem="6sl-6p-fCA" firstAttribute="top" secondItem="JJl-MG-qZn" secondAttribute="bottom" constant="8" id="w9h-GN-ULu"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -54,4 +65,9 @@
             <point key="canvasLocation" x="133" y="139"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

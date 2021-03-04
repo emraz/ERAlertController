@@ -19,3 +19,14 @@
                 print("Cancel button pressed")
             }
         }
+        
+ 3. To show alert with input text field 
+ 
+        ERAlertController.showAlertWithTextInput(title: "Input Field",
+                                                 subtitle: "Please input your desire text",
+                                                 actionTitle: "Confirm",
+                                                 cancelTitle: "Discard",
+                                                 inputPlaceholder: "Please type...",
+                                                 inputKeyboardType: UIKeyboardType.default) { (alertAction) in
+        } actionHandler: { (inputText) in
+        }
